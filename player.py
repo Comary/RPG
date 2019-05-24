@@ -15,6 +15,8 @@ class player(object):
         self.stam = 100
         self.dam = 0
     
-    def heal(self, object):
-        pass
+    def heal(self, obj):
+        if self.hp + obj.heals < 100:
+            print('You Have healed for',obj.heals)
+            self.hp += obj.heals
        
