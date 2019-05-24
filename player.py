@@ -16,7 +16,7 @@ class player(object):
         self.stam = 100
         self.dam = 0
     
-    def heal(self, obj):
+    def heal(self, obj): # Heal the player using an healing item TBAL
         if self.hp + obj.heals < self.hp_max:
             print('You Have healed for ' + obj.heals + '.')
             self.hp += obj.heals
