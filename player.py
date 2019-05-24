@@ -11,12 +11,26 @@ class player(object):
     # initialize the attributes
     def __init__(self):
         self.hp = 100
+        self.hp_max = 100
         self.mp = 100
         self.stam = 100
         self.dam = 0
     
     def heal(self, obj):
-        if self.hp + obj.heals < 100:
-            print('You Have healed for',obj.heals)
+        if self.hp + obj.heals < self.hp_max:
+            print('You Have healed for ' + obj.heals + '.')
             self.hp += obj.heals
-       
+        elif self.hp + obj.heals > self.hp_max:
+            while True:
+                print('\n')
+                print('You will be wasting a bit of this potion, Are you sure you want to use this?')
+                print('Enter [y] or [n] To Continue.')
+                var = input('>>>  ')
+                if var == 'y' or var == 'Y':
+                    pass
+                elif var == 'n' or var == 'N':
+                    pass
+                else:
+                    print('Please enter [y] or [n]')
+                    continue
+            
